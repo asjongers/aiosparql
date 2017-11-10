@@ -124,7 +124,8 @@ class SPARQLClient:
         self._prefixes_header = "\n".join(header) + "\n"
 
     def _prepare_query(self, query: str, *args, **keywords) -> dict:
-        lines = [self._prefixes_header]
+        lines = ["DEFINE sql:log-enable 3 "]
+        lines.extend(self._prefixes_header)
         lines.extend([dedent(query).strip()])
         query_args = {'graph': self.graph} if self.graph else {}
         query_args.update(keywords)
