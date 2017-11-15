@@ -93,6 +93,10 @@ Requirements
 
  *  Python >= 3.5
 
+Notes
+-----
+This forked version of aiosparql enforces the use of a Virtuoso specific configuration parameter ("DEFINE sql:log-enable 3") for all queries. Behavior with any other graph store is untested and undocumented. 
+
 Credits
 -------
 
